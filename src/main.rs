@@ -8,7 +8,7 @@ use eyre::Context;
 
 #[tokio::main]
 async fn main() -> Result<(), color_eyre::Report> {
-    util::install_utils()?;
+    util::install_utils(&[], true)?;
     let opts = Opts::parse();
 
     tracing::debug!(
@@ -18,7 +18,9 @@ async fn main() -> Result<(), color_eyre::Report> {
             .to_string()
     );
 
-    run(&opts).await.with_context(|| "When running application")?;
+    run(&opts)
+        .await
+        .with_context(|| "When running application")?;
 
     Ok(())
 }

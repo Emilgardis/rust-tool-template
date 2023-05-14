@@ -45,7 +45,7 @@ jobs:
       - name: Install rust
         uses: dtolnay/rust-toolchain@master
         with:
-          toolchain: ${{ env.MSRV }}
+          toolchain: nightly
           components: rustfmt
       - name: Run fmt
         run: cargo fmt -- --check

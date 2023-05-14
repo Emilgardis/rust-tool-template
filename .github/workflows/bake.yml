@@ -10,6 +10,8 @@ env:
 
 jobs:
   bake:
+    # Make sure to set the bin name in the bake file before enabling
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
